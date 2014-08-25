@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.order(:year)
+    @movies = Movie.order("year DESC")
   end
 
   def new
@@ -17,8 +17,16 @@ class MoviesController < ApplicationController
 
 
 
-     @movie.save
+    if @movie.save
       redirect_to root_path
+    else
+
+    flash[:notice] = "Name can't be blank"
+    flash[:notice] = "Year can't be blank"
+    flash[:notice] = "Year is not a number"
+    render 'movies/new'
 
     end
+  end
+
   end
