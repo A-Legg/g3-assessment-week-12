@@ -13,15 +13,11 @@ class MoviesController < ApplicationController
     @movie.year = params[:movie][:year]
     @movie.synopsis = params[:movie][:synopsis]
 
-
-
-
-
-    if @movie.save
+      if @movie.save
       redirect_to root_path
     else
 
-    flash[:notice] =
+
     render 'movies/new'
 
     end

@@ -1,5 +1,5 @@
 <h1>Cageflix</h1>
-<p>Netflix for NIc Cage movies</p>
+<h2>Netflix for Nic Cage movies</h2>
 
 <%= form_for @movie, url: create_path do |f| %>
 
@@ -23,7 +23,7 @@
     <%= f.label :year, "Year" %>
     <%= f.number_field :year %>
   </div>
-  <div>
+  <div class="syn">
     <%= f.label :synopsis, "Synopsis" %>
     <%= f.text_field :synopsis, autofocus: true %>
   </div>
