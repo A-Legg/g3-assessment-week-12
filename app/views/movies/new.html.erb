@@ -2,11 +2,16 @@
 <p>Netflix for NIc Cage movies</p>
 
 <%= form_for @movie, url: create_path do |f| %>
-    <% if @movie.errors.any? %>
-    <div class="errors">
-      <%= flash[:notice] %>
-    </div>
+
+  <div class="errors">
+    <% if @movie.errors.full_messages.any? %>
+    <% @movie.errors.full_messages.each do |error| %>
+        <%= error if @movie.errors.full_messages.first == error %><br />
+        <% end %>
+
     <% end %>
+    </div>
+
 
 
 

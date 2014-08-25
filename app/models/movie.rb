@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
- validates :name, presence: true
-  validates :year, presence: true
+ validates_presence_of :name
+  validates_presence_of :year
   validates :year, numericality: true
 end

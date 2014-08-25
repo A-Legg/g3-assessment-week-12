@@ -21,9 +21,7 @@ class MoviesController < ApplicationController
       redirect_to root_path
     else
 
-    flash[:notice] = "Name can't be blank"
-    flash[:notice] = "Year can't be blank"
-    flash[:notice] = "Year is not a number"
+    flash[:notice] =
     render 'movies/new'
 
     end
