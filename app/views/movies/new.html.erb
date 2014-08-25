@@ -6,7 +6,7 @@
   <div class="errors">
     <% if @movie.errors.full_messages.any? %>
     <% @movie.errors.full_messages.each do |error| %>
-        <%= error if @movie.errors.full_messages.first == error %><br />
+        <%= error if @movie.errors.full_messages.each == error %><br />
         <% end %>
 
     <% end %>
